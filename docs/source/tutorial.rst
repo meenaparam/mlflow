@@ -280,7 +280,7 @@ Packaging the Training Code
             - pip:
               - mlflow
 
-      To run this project, invoke ``mlflow run tutorial -P alpha=0.42``. After running
+      To run this project, from the ``examples`` folder, invoke ``mlflow run sklearn_elasticnet_wine -P alpha=0.42``. After running
       this command, MLflow will run your training code in a new Conda environment with the dependencies
       specified in ``conda.yaml``.
 
@@ -376,6 +376,12 @@ Serving the Model
       .. code::
 
           mlflow sklearn serve /Users/mlflow/mlflow-prototype/mlruns/0/7c1a0d5c42844dcdb8f5191146925174/artifacts/model -p 1234
+          
+      To deploy the server using your own model artifact, copy the path to your ``model`` folder using the same UI approach as above. Then run:
+      
+      .. code::
+      
+          mlflow sklearn serve -m PATH_TO_YOUR_MODEL -p 1234
 
       .. note::
 
